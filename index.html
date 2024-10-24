@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>excel dj website</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <style>
+        
+            #draggable { width: 400px; height: 400px; padding: 0.5em; }
+          </style>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+  </head>
+  <body>
+
+    <p>excel dj - voted best dj but they threw it all away...</p>
+
+    
+   
+  
+    <!--<div class="draggable-container">-->
+    <!-- <img id="another" class="draggable" src="another-release.png" alt="another release Cover" style="width:400px; height: 400px">-->
+    <!--</div>-->
+    <!--<div>-->
+    <!--<a href="https://divineglintmusic.bandcamp.com/album/another-relaase">bandcamp</a>-->
+    <!--</div>-->
+    
+  <!--<div class="draggable-container">-->
+  <!--  <img id="source" class="draggable" src="source.png" alt="source cover" style="width:400px; height: 400px">-->
+  <!--  <a href="https://djdjdjexcel.bandcamp.com/album/source">bandcamp</a>-->
+  <!--</div>-->
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $( function() {
+    $( "#draggable" ).draggable();
+  } );
+  </script>
+  <div id="draggable" class="cover1">
+    <img src='another-release.png' alt="another release cover" style="width:400px; height: 400px">
+  </div>
+  <div class="cover1link">
+  <a href="https://divineglintmusic.bandcamp.com/album/another-relaase">bandcamp</a>
+  </div>
+  </body>
+</html>
