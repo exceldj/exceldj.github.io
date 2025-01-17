@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>excel dj website</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-         <style>
-      /* Basic style for draggable image */
-      #draggable { 
-        width: 900px; 
-        height: 900px; 
-        padding: 0.5em; 
-        cursor: move; 
-      }
-      .cover1link {
-        text-align: center;
-        margin-top: 10px;
-      }
-    </style>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-  </head>
-  <body>
-    <p>excel dj - voted best dj but they threw it all away...</p>
-    
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    
-  <script>
-      $(document).ready(function() {
-        // Ensure touch events are supported
-        $("#draggable").draggable({
-          // Enable touch support explicitly
-          start: function(event, ui) {
-            // Add some visual feedback for dragging start (optional)
-            $(this).css('cursor', 'move');
-          },
-          drag: function(event, ui) {
-            // Optionally add other custom effects or behavior during drag
-          },
-          stop: function(event, ui) {
-            // Handle actions when dragging stops (optional)
-          }
-        });
-      });
-    </script>
-    
-  <div id="draggable" class="cover1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>excel dj website</title>
+  <style>
+    /* Basic style for draggable image */
+    .move { 
+      width: 900px; 
+      height: 900px;
+      position: fixed; 
+      left: 0; /* Initial position */
+      top: 0;  /* Initial position */
+      padding: 0.5em; 
+      cursor: move; 
+    }
+  </style>
+</head>
+<body>
+  <p>excel dj - voted best dj but they threw it all away...</p>
+  
+  <div class="move">
     <img src='pic.png' alt="excel dj" style="width:900px; height: 900px">
   </div>
   <div class="cover1link">
-  <a href="https://djdjdjexcel.bandcamp.com">bandcamp</a>
+    <a href="https://djdjdjexcel.bandcamp.com">bandcamp</a>
   </div>
-  </body>
+
+  <script>
+    var move = document.querySelector('.move');
+
+    move.addEventListener('mousedown', mousedown);
+    move.addEventListener('touchstart', ontouchstart);
+
+    function mousedown(e) {
+      e.preventDefault(); // Prevent default behavior to avoid text selection
+      
+      document.addEventListener('mousemove', mousemove);
+      document.addEventListener('mouseup', mouseup);
+
+      function mousemove(e) {
+        e.preventDefault(); // Prevent default behavior to avoid text selection
+        var x = e.clientX - 100 + 'px';
+        var y = e.clientY - 100 + 'px';
+        move.style.left = x;
+        move.style.top = y;
+      }
+
+      function mouseup() {
+        document.removeEventListener('mousemove', mousemove);
+        document.removeEventListener('mouseup', mouseup);
+      }
+    }
+
+    function ontouchstart(e) {
+      e.preventDefault(); // Prevent default behavior to avoid scrolling
+
+      document.addEventListener('touchmove', ontouchmove);
+      document.addEventListener('touchend', ontouchend);
+
+      function ontouchmove(e) {
+        e.preventDefault();
+        for (let target of e.targetTouches) {
+          var x = target.clientX - 100 + "px";
+          var y = target.clientY - 100 + "px";
+          move.style.left = x;
+          move.style.top = y;
+        }
+      }
+
+      function ontouchend() {
+        document.removeEventListener('touchmove', ontouchmove);
+        document.removeEventListener('touchend', ontouchend);
+      }
+    }
+  </script>
+</body>
 </html>
