@@ -22,7 +22,7 @@
     <p>excel dj - voted best dj but they threw it all away...</p>
   </div>
 
-  <audio autoplay>
+  <audio id="audio" loop>
     <source src="sound/glitch.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
@@ -61,6 +61,9 @@
     function mousedown(e) {
       e.preventDefault(); // Prevent default behavior to avoid text selection
       
+      // Play audio when user interacts with the element
+      audio.play();
+
       // Calculate the offset
       offsetX = e.clientX - move.getBoundingClientRect().left;
       offsetY = e.clientY - move.getBoundingClientRect().top;
@@ -84,6 +87,9 @@
 
     function ontouchstart(e) {
       e.preventDefault(); // Prevent default behavior to avoid scrolling
+
+      // Play audio when user interacts with the element
+      audio.play();
 
       // Calculate the offset
       var touch = e.targetTouches[0];
