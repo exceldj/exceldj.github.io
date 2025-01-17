@@ -29,6 +29,7 @@
 
   <script>
     var move = document.querySelector('.move');
+    var offsetX, offsetY;
 
     move.addEventListener('mousedown', mousedown);
     move.addEventListener('touchstart', ontouchstart);
@@ -36,43 +37,52 @@
     function mousedown(e) {
       e.preventDefault(); // Prevent default behavior to avoid text selection
       
+      // Calculate the offset
+      offsetX = e.clientX - move.getBoundingClientRect().left;
+      offsetY = e.clientY - move.getBoundingClientRect().top;
+
       document.addEventListener('mousemove', mousemove);
       document.addEventListener('mouseup', mouseup);
+    }
 
-      function mousemove(e) {
-        e.preventDefault(); // Prevent default behavior to avoid text selection
-        var x = e.clientX - 100 + 'px';
-        var y = e.clientY - 100 + 'px';
-        move.style.left = x;
-        move.style.top = y;
-      }
+    function mousemove(e) {
+      e.preventDefault(); // Prevent default behavior to avoid text selection
+      var x = e.clientX - offsetX + 'px';
+      var y = e.clientY - offsetY + 'px';
+      move.style.left = x;
+      move.style.top = y;
+    }
 
-      function mouseup() {
-        document.removeEventListener('mousemove', mousemove);
-        document.removeEventListener('mouseup', mouseup);
-      }
+    function mouseup() {
+      document.removeEventListener('mousemove', mousemove);
+      document.removeEventListener('mouseup', mouseup);
     }
 
     function ontouchstart(e) {
       e.preventDefault(); // Prevent default behavior to avoid scrolling
 
+      // Calculate the offset
+      var touch = e.targetTouches[0];
+      offsetX = touch.clientX - move.getBoundingClientRect().left;
+      offsetY = touch.clientY - move.getBoundingClientRect().top;
+
       document.addEventListener('touchmove', ontouchmove);
       document.addEventListener('touchend', ontouchend);
+    }
 
-      function ontouchmove(e) {
-        e.preventDefault();
-        for (let target of e.targetTouches) {
-          var x = target.clientX - 100 + "px";
-          var y = target.clientY - 100 + "px";
-          move.style.left = x;
-          move.style.top = y;
-        }
+    function ontouchmove(e) {
+      e.preventDefault();
+      for (let touch of e.targetTouches) {
+        var x = touch.clientX - offsetX + "px";
+        var y = touch.clientY - offsetY + "px";
+        move.style.left = x;
+        move.style.top = y;
       }
+    }
 
-      function ontouchend() {
-        document.removeEventListener('touchmove', ontouchmove);
-        document.removeEventListener('touchend', ontouchend);
-      }
+    function ontouchend() {
+      document.removeEventListener('touchmove', ontouchmove);
+      document.removeEventListener('touchend', ontouchend);
     }
   </script>
 </body>
