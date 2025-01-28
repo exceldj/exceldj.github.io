@@ -16,16 +16,28 @@
       cursor: move; 
       /* background: url("/images/pattern.png") repeat 0 0 */
     }
-    /* #image-pattern {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-} */
+    .horizontal-box{
+      display: inline-flex;
+      flex-direction: column;
+    }
+    .displayable-text{
+      display: none;
+    }
+    .displayable-text:target {
+      display: inline-block;
+    }
+    p.big {
+    line-height: 1.2;
+    }
+    hr {
+    display: none;
+    }
+    .vertical-space {
+      margin-top: 20px; 
+    }
+    body {
+      font-family: 'Courier New';
+    }
   </style>
 </head>
 <body>
@@ -39,7 +51,7 @@
   </audio>
 
   <div class="move">
-    <img src='images/mgs_world.PNG' alt="excel dj" style="width:900px; height: 900px">
+    <img src="" alt="excel dj" style="width:900px; height: 600px">
   </div>
 
   <div>  
@@ -50,8 +62,41 @@
     <a href="https://www.ninaprotocol.com/hubs/excel-dj-updates-dot-com">nina</a>
   </div>
 
-  <div>  
-    <a href="">shows</a>
+  <div class="horizontal-box">  
+    <div>  
+      <a href="javascript:void(0);" class="show" onclick="toggleVisibility('shows')">shows</a>
+      <div id="shows" class="displayable-text" style = "display: none;">
+        <p class="big">
+          <strong>5th feb '23</strong> <em>venue mot</em> loose trax w Cliché Toupée, Vanessa Bedoret, Twin/Kosty
+          <strong>1st april '23</strong> <em>boat????</em> minx w 
+          <strong>23rd april '23</strong> <em>spanners</em> limbs w Solar Rocks, Nanzhen Yang, Anjali, MUTE, swallow
+          <strong>29th april '23</strong> <em>set vault</em> roam ii w Euan Gubbins, Ashley's Fit Up, Cowboy Builder, VERYT, DJ Praktice, Yewen Jin, MUTE and swallow
+          <strong>8-11th June</strong> gnojki samba 
+          <strong>20th june '23</strong> <em>iklectik</em> supporting Jesse Kanda
+          <strong>14th jul '23</strong> <em>het bos</em> burenhinder: a midsummer night's dream w LC, Ella Jacobs, Instar
+          <strong>25th aug '23</strong> <em>set vault</em> limbs: plaza w Nanzhen Yang, Yewen Jin, Flywheel, lifeworld, tapes_2046, faebia, MUTE, swallow
+          <strong>7th sept '23</strong> <em>spanners</em> while you're online w Mitsubishi Suicide, etta97, sermon
+          <strong>1st dec '23</strong> <em>electrowerkz</em> riposte w too many to name lol
+          <strong>9th dec '23</strong> <em>the old church</em> shshchts w Ghostlore of Britain, Ellis Berwick, >  , Bodya Konakov, Mud Creeper
+          <br>
+          <div class="vertical-space"></div>
+          <strong>6th jan '24</strong> <em>corsica studios</em> Syphen w Blood of Aza b2b KAVARI, KLAUDIO, MVCOKO, novasdemise, S280F, Ship Sket, AFTERS3N, Astral Bandit, CYBERNOVA, POUNDSTERL1NG 
+          <strong>21st jan '24</strong> <em>spanners</em> glint music 'another release' launch party w wrestling (bianca scout + jb glazer), Jordan Playfair
+          <strong>9th feb '24</strong> <em>unit 58</em> [fragments on machines] w ex.sses, jung latch, Ilya Gurin-Babayeu, Glimmerman, Konakov, grysh77 
+          <strong>20th april '24</strong> <em>the old church</em> shshchts w Bodya Konakov, Max Svitlo, Miedo Total, Sgabe
+          <strong>28th april '24</strong> <em>avalon café</em> jano w Yewen Jin, Sseq
+          <strong>8th nov '24</strong> <em>avalon café</em> texture mag live w Deer Park, Void, Shauwdii, Smilegoth, DJ Corpmane, Madjestic Kasual, RISH, Spraelle, Able Archer
+          <strong>22nd Nov '24</strong> <em>spanners</em> gentle__corp 001 w Blood of Aza, gentler, hawazin o, shams, speakinginriddles
+          <br>
+          <div class="vertical-space"></div>
+          <strong>upcoming</strong>
+          <br>
+          <div class="vertical-space"></div>
+          <a href="https://ra.co/events/2067759"><strong>2th feb '25</strong> <em>tba- blythe fields summit</em> saga2: skysill chills w earthangel, GODPARENT, kemitstry, laina + sp!r!t an0mal!es</a>
+          <a href="https://ra.co/events/2074920"><strong>6th feb '25</strong> <em>ormside projects</em> glint music presents: party 4 ((ex.sses)) w ex.sses, ACTION, feeo, jb glazer, Milk Eyed Sigh, Maya Vika</a>
+        </p>
+      </div>
+    </div>
   </div>
 
   <div>  
@@ -62,17 +107,69 @@
     <a href="">writing</a>
   </div>
 
+  <div>  
+    <a href="">games</a>
+  </div>
+
+  <div class="horizontal-box">
+    <div>  
+      <a href="javascript:void(0);" class="show" onclick="toggleVisibility('zude')">zude</a>
+      <div id="zude" class="displayable-text" style = "display: none;">
+        <p class="big">
+          zude
+      </div>
+    </div>
+  </div>
+
+  <div>  
+    <a href="">realm eras</a>
+  </div>
+
+  <div class="horizontal-box">
+    <div>  
+      <a href="javascript:void(0);" class="show" onclick="toggleVisibility('about')">about</a>
+      <div id="about" class="displayable-text" style = "display: none;">
+        <p class="big">
+          ahahahahahahaha <br>
+          write this later probably <br>
+          artificial corporate intelligence helped me make this<br>
+          context born and transcending hehe
+          <br>
+          <br>
+          <div class="vertical-space"></div>
+          <a href="mailto:djdjexcel@gmail.com"><strong>contact i guess haha</strong></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
   <script>
     var move = document.querySelector('.move');
     var offsetX, offsetY;
     var d = new Date();
     var t = d.getTime();
+    var n  = d.getDay();
     var days = Math.floor(t / (1000 * 60 * 60 * 24));
     
-    var imageArray = new Array();
+    var imageArray = new Array("images/mgs_world.PNG", "images/fe.JPG","images/IMG_445.JPG", "images/IMG_273.JPG", "images/IMG_619.JPG", "images/me_and_u.jpg", "images/IMG_2894.jpg", "images/IMG_2880.jpg", "images/IMG_2847.jpg", "images/IMG_2697.jpg", "images/IMG_2612.jpg", "images/IMG_2611.jpg", "images/IMG_2610.jpg", "images/IMG_2603.jpg", "images/IMG_2595.jpg", "images/IMG_2586.jpg", "images/img_909.JPG", "images/IMG_0978.JPG", "images/IMG_2506.jpg", "images/IMG_995.JPG", "images/IMG_2585.jpg", "images/IMG_2584.jpg", "images/IMG_2583.jpg", "images/IMG_2506.jpg", "images/agent.jpg", "images/img_909.JPG" );
+    var fontArray = new Array();
+
+    var imageremainder = days % imageArray.length;
+    var fontremainder = days % fontArray.length;
+
+    var dailyImage = new Image();
+    var dailyImage = imageArray[imageremainder];
 
     move.addEventListener('mousedown', mousedown);
     move.addEventListener('touchstart', ontouchstart);
+
+    function setImageSrc() {
+      var imgElement = document.querySelector('.move img');
+      var randomImage = imageArray[Math.floor(Math.random() * imageArray.length)];
+      imgElement.src = randomImage;
+    }
+
+    
 
     function mousedown(e) {
       e.preventDefault(); // Prevent default behavior to avoid text selection
@@ -130,6 +227,39 @@
       document.removeEventListener('touchmove', ontouchmove);
       document.removeEventListener('touchend', ontouchend);
     }
+
+    function toggleVisibility(elementId) {
+        var element = document.getElementById(elementId);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+    
+    /* function loopElipsis() {
+      var elipsis = document.querySelector('.elipsis');
+      var text = elipsis.textContent;
+      elipsis.textContent = text + '.';
+    } */
+
+    window.onload = function() {
+      var pElement = document.querySelector('p');
+      var baseText = 'excel dj - voted best dj but they threw it all away';
+      var ellipsis = '';
+      var maxDots = 50;
+      var interval = 500; // Interval in milliseconds
+
+      setInterval(function() {
+          if (ellipsis.length >= maxDots) {
+              ellipsis = '';
+          } else {
+              ellipsis += '.';
+          }
+          pElement.textContent = baseText + ellipsis;
+      }, interval);
+      setImageSrc();
+    };
   </script>
 </body>
 </html>
